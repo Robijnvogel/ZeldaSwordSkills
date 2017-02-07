@@ -75,8 +75,8 @@ public class RenderEntityFairy extends Render
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer renderer = tessellator.getWorldRenderer();
 		renderer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
-		renderer.setColorRGBA_I(k1, 128);
-		renderer.setNormal(0.0F, 1.0F, 0.0F);
+		renderer.putColorRGBA(0, l, i1, j1, 128);
+		renderer.putNormal(0.0F, 1.0F, 0.0F);
 		renderer.pos((0.0F - f7), (0.0F - f8), 0.0D).tex(f2, f5);
 		renderer.pos((f6 - f7), (0.0F - f8), 0.0D).tex(f3, f5);
 		renderer.pos((f6 - f7), (1.0F - f8), 0.0D).tex(f3, f4);

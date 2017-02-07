@@ -153,7 +153,7 @@ public class RenderEntityHookShot extends Render
 			GlStateManager.disableTexture2D();
 			GlStateManager.disableLighting();
 			GlStateManager.disableCull();
-			renderer.startDrawing(5);
+			renderer.begin(5, DefaultVertexFormats.POSITION_TEX);
 			int i;
 			float f2;
 			float grey = (1.0F/255) * 128F;
@@ -165,11 +165,11 @@ public class RenderEntityHookShot extends Render
 					renderer.setColorRGBA_F(lgrey, lgrey, lgrey, 1.0F);
 				}
 				f2 = (float)i / 24.0F;
-				renderer.addVertex(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2);
-				renderer.addVertex(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
 			}
 			tessellator.draw();
-			renderer.startDrawing(5);
+			renderer.begin(5, DefaultVertexFormats.POSITION_TEX);;
 			for (i = 0; i <= 24; ++i) {
 				if (i % 2 == 0) {
 					renderer.setColorRGBA_F(grey, grey, grey, 1.0F);
@@ -177,8 +177,8 @@ public class RenderEntityHookShot extends Render
 					renderer.setColorRGBA_F(lgrey, lgrey, lgrey, 1.0F);
 				}
 				f2 = (float) i / 24.0F;
-				renderer.addVertex(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
-				renderer.addVertex(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2 + 0.025D);
+				renderer.pos(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2 + 0.025D);
 			}
 			tessellator.draw();
 			GlStateManager.enableLighting();

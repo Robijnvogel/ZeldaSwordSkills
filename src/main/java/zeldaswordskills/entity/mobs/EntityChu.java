@@ -487,7 +487,7 @@ public class EntityChu extends EntitySlime implements IEntityBombEater, IEntityL
 				double d1 = this.posZ + (double)f3;
 				world.spawnParticle(enumparticletypes, d0, this.getEntityBoundingBox().minY, d1, 0.0D, 0.0D, 0.0D, new int[0]);
 			}
-			 */
+			*/
 			if (makesSoundOnLand()) {
 				playSound(getJumpSound(), getSoundVolume(), ((rand.nextFloat() - rand.nextFloat()) * 0.2F + 1.0F) / 0.8F);
 			}
@@ -606,7 +606,7 @@ public class EntityChu extends EntitySlime implements IEntityBombEater, IEntityL
 			attemptMerge();
 		}
 	}
-	 */
+	*/
 
 	/**
 	 * Updates the Chu's shock status; only called if canChuTypeShock() returns true

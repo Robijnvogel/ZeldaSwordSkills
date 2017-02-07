@@ -50,7 +50,7 @@ public class RenderTileEntityPedestal extends TileEntitySpecialRenderer
 			GlStateManager.scale(1F, 1F, 1F);
 			GlStateManager.rotate(pedestal.getOrientation() == 0 ? 0F : 90F, 0.0F, 1.0F, 0.0F);
 			GlStateManager.rotate(225.0F, 0.0F, 0.0F, 1.0F);
-			renderItem.renderItemModel(sword);
+			renderItem.renderItem(sword, Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getItemModel(sword));
 			GlStateManager.disableRescaleNormal();
 			GlStateManager.popMatrix();
 		}

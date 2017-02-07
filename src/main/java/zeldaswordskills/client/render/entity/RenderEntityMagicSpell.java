@@ -58,6 +58,7 @@ public class RenderEntityMagicSpell extends Render
 		GlStateManager.rotate(yaw, 0, 1, 0);
 		GlStateManager.rotate(roll, 0.8F, 0F, -0.6F);
 		bindEntityTexture(entity);
+		/*Possibly change this to .putBrightness()*/
 		Tessellator.getInstance().getWorldRenderer().setBrightness(0xf000f0);
 		box1.render(entity);
 		GlStateManager.rotate(45, 1, 0, 1);
