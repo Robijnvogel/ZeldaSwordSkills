@@ -17,7 +17,9 @@
 
 package zeldaswordskills.client.render.entity;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -51,7 +53,7 @@ public class RenderEntityBoomerang extends Render
 			GlStateManager.rotate(entity.rotationYaw + (entity.prevRotationYaw - entity.rotationYaw) * partialTick - 60.0F, 0.0F, 1.0F, 0.0F);
 			GlStateManager.rotate(Math.abs(entity.rotationPitch + (entity.prevRotationPitch - entity.rotationPitch)) * partialTick - rotation, 0.0F, 0.0F, 1.0F);
 			bindTexture(TextureMap.locationBlocksTexture);
-			renderItem.renderItemModel(boomerang);
+			renderItem.renderItem(boomerang, Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getItemModel(boomerang));
 			GlStateManager.disableRescaleNormal();
 			GlStateManager.popMatrix();
 		}

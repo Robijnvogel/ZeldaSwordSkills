@@ -74,7 +74,6 @@ public class RenderEntitySkulltula extends RenderSpider
 		}
 	}
 
-	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) {
 		return ((EntitySkulltula) entity).isGolden() ? golden : base;
 	}

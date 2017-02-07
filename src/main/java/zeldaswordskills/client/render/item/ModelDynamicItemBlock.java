@@ -168,6 +168,7 @@ public class ModelDynamicItemBlock implements ISmartItemModel {
 			switch (cameraTransformType) {
 			case FIRST_PERSON:
 				GlStateManager.scale(2.0F, 2.0F, 2.0F);
+/*Look into using TRSRTransformation instead of using deprecated methods maybe*/
 				RenderItem.applyVanillaTransform(parent.getItemCameraTransforms().firstPerson);
 				GlStateManager.rotate(45.0F, 0.0F, 1.0F, 0.0F);
 				GlStateManager.translate(0.0F, 0.0F, -0.35F);

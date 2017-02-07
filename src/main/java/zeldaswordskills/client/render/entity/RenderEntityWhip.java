@@ -22,6 +22,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
@@ -98,7 +99,7 @@ public class RenderEntityWhip extends Render
 			GlStateManager.disableCull();
 			Tessellator tessellator = Tessellator.getInstance();
 			WorldRenderer renderer = tessellator.getWorldRenderer();
-			renderer.startDrawing(5);
+			renderer.begin(5, DefaultVertexFormats.POSITION_TEX);
 			int i;
 			float f2;
 			int r = 139;
@@ -110,18 +111,18 @@ public class RenderEntityWhip extends Render
 				b = 0;
 			}
 			for (i = 0; i <= 24; ++i) {
-				renderer.setColorRGBA(r, g, b, 255);
+				renderer.putColorRGBA(0, r, g, b, 255);
 				f2 = (float)i / 24.0F;
-				renderer.addVertex(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2);
-				renderer.addVertex(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
 			}
 			tessellator.draw();
-			renderer.startDrawing(5);
+			renderer.begin(5, DefaultVertexFormats.POSITION_TEX);
 			for (i = 0; i <= 24; ++i) {
-				renderer.setColorRGBA(r, g, b, 255);
+				renderer.putColorRGBA(1 ,r, g, b, 255);
 				f2 = (float) i / 24.0F;
-				renderer.addVertex(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
-				renderer.addVertex(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2 + 0.025D);
+				renderer.pos(x + d16 * (double) f2 + 0.0D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F) + 0.025D, z + d18 * (double) f2);
+				renderer.pos(x + d16 * (double) f2 + 0.025D, y + d17 * (double)(f2 * f2 + f2) * 0.5D + (double)((24.0F - (float) i) / 18.0F + 0.125F), z + d18 * (double) f2 + 0.025D);
 			}
 			tessellator.draw();
 			GlStateManager.enableLighting();

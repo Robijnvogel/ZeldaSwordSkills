@@ -48,7 +48,7 @@ public class RenderTileEntityCeramicJar extends TileEntitySpecialRenderer
 			GlStateManager.rotate(45F, 0.0F, 1.0F, 0.0F);
 			GlStateManager.rotate(30F, 1.0F, 0.0F, 0.0F);
 			GlStateManager.rotate((stack.getItem().isFull3D() ? 225.0F : 45.0F), 0.0F, 0.0F, 1.0F);
-			renderItem.renderItemModel(stack);
+			renderItem.renderItem(stack, Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getItemModel(stack));
 			GlStateManager.disableRescaleNormal();
 			GlStateManager.popMatrix();
 		}
